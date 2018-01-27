@@ -1,5 +1,5 @@
 function loadRepos(userName) {
-    function onLoad() {
+    function onLoad(event) {
         const reposInfo = JSON.parse(this.responseText);
 
         let html = '<div class="row">';
@@ -29,12 +29,12 @@ function loadRepos(userName) {
     var url = 'https://api.github.com/users/' + userName + '/repos';
 
     var oReq = new XMLHttpRequest();
-    oReq.addEventListener('load', onLoad);
+    oReq.addEventListener('load', onLoad)
     oReq.open('GET', url);
     oReq.send();
 }
 
 var myButton = document.querySelector('#btnGetRepos');
 myButton.addEventListener('click', function() {
-    loadRepos('CodeYourFuture');
+     loadRepos('CodeYourFuture');
 });
